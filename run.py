@@ -1,11 +1,11 @@
 import dojobot as dj
 import asyncio
 import discord
+import logging
 
 
 async def main():
-    discord.utils.setup_logging()#shows errors
-    await dj.bot.start(dj.bot.TOKEN)
-    
+    logging.basicConfig(level=logging.INFO)
+    discord.utils.setup_logging(level=logging.INFO, root=False)    
 if __name__ == "__main__":
-    asyncio.run(dj.bot.start(dj.bot.TOKEN))     
+    asyncio.run(dj.bot.run(dj.bot.TOKEN))     
